@@ -94,6 +94,13 @@ public class Metodos {
         }
     }
 
+    /**
+     * consulta la tabla y muestra sus valores
+     *
+     * @param tabla recoge el nombre de la tabla
+     * @param campos recoge los campos a consultar
+     * @return
+     */
     public ResultSet select(String tabla, String campos) {
         Statement s;
         try {
