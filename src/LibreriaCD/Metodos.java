@@ -57,7 +57,13 @@ public class Metodos {
             Logger.getLogger(Metodos.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
+    
+    /**
+     * borra de la tabla filas, según la clave primaria
+     *
+     * @param tabla recoge el nombre de la tabla
+     * @param primaryKey recoge el numero de la fila
+     */
     public void delete(String tabla, int primaryKey) {
         PreparedStatement d;
         try {
@@ -70,15 +76,17 @@ public class Metodos {
     }
     
     /**
-     * borra de la tabla filas, según la clave primaria
+     * varia el valor de un campo segun la clave primaria
      *
      * @param tabla recoge el nombre de la tabla
+     * @param campo recoge el nombre del campo anterior
+     * @param valor recoge el nuevo valor del campo
      * @param primaryKey recoge el numero de la fila
      */
-    public void update(String tabla, String campo, String dato, int primaryKey) {
+    public void update(String tabla, String campo, String valor, int primaryKey) {
         PreparedStatement u;
         try {
-            u = connection.prepareStatement("update " + tabla + " set " + campo + "=" + dato + " where .id=" + primaryKey);
+            u = connection.prepareStatement("update " + tabla + " set " + campo + "=" + valor + " where .id=" + primaryKey);
             u.execute();
             System.out.println("actualizado");
         } catch (SQLException ex) {
