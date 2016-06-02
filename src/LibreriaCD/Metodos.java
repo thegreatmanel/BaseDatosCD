@@ -68,7 +68,13 @@ public class Metodos {
             Logger.getLogger(Metodos.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
+    
+    /**
+     * borra de la tabla filas, según la clave primaria
+     *
+     * @param tabla recoge el nombre de la tabla
+     * @param primaryKey recoge el numero de la fila
+     */
     public void update(String tabla, String campo, String dato, int primaryKey) {
         PreparedStatement u;
         try {
