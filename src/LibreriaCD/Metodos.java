@@ -41,10 +41,16 @@ public class Metodos {
         }
     }
 
-    public void insert(String tabla, String datos) {
+    /**
+     * mete en la tabla los valores dados por el usuario
+     *
+     * @param tabla recoge el nombre de la tabla
+     * @param valores recoge los valores dados a la tabla
+     */
+    public void insert(String tabla, String valores) {
         PreparedStatement i;
         try {
-            i = connection.prepareStatement("insert into " + tabla + " values(" + datos + ")");
+            i = connection.prepareStatement("insert into " + tabla + " values(" + valores + ")");
             i.execute();
             System.out.println("insertado");
         } catch (SQLException ex) {
